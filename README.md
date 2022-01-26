@@ -17,10 +17,10 @@ In `_quarto.yml`, there is a section under `format` for Powerpoint that determin
 
 ```
 pptx:
-	reference-doc: _resources/templates/pptx/cosmic-latte.pptx
+  reference-doc: _resources/templates/pptx/cosmic-latte.pptx
 ```
 
-Change this to one of the other themes available in `_resources/templates/pptx`. Options are `cosmic-latter`, `classy`, `dark-mode`, and `nord-theme`.
+Change this to one of the other themes available in `_resources/templates/pptx`. Options are `cosmic-latte`, `classy`, `dark-mode`, and `nord-theme`.
 
 ## Further customisation
 
