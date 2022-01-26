@@ -1,0 +1,41 @@
+# Project options - can change the overall project title
+# and the name of the output directory here
+project:
+  title: "Presentations"
+  output-dir: "_PRESENTATIONS"
+
+# options for all formats - suggested not to change
+from: markdown+raw_attribute+raw_tex
+filters: 
+  - _resources/scripts/shortcodes.lua
+standalone: true
+self-contained: true
+slide-level: 2
+
+# biobliography options - if using other file names
+# or multiple bibliography files, change/add them here
+# Can also change the referencing style here using a
+# different csl file - many more can be found at
+# https://github.com/citation-style-language/styles
+bibliography:
+  - _bib/references.bib
+csl: _bib/citethemright10th.csl
+
+# output format options - change these as required
+format:
+  pdf:
+    template: _resources/templates/latex.tex
+    # template: _resources/templates/latex-colour.tex
+    pdfengine: lualatex
+    fontsize: 12pt # 10, 11, or 12pt
+    mainfont: Open Sans # font used for main text throughout document
+    sansfont: Open Sans # font used for header text throughout document
+    classoption: landscape
+    pagestyle: empty
+  html:
+    template: _resources/templates/html.html
+    toc: false # turn table of contents on/off
+  pptx:
+    reference-doc: _resources/templates/pptx/cosmic-latte.pptx
+    
+    
