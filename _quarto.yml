@@ -12,6 +12,10 @@ standalone: true
 self-contained: true
 slide-level: 2
 
+# set a module code to show up on all HTML and PDF outputs - can be
+# any string, e.g. 'ST4011', or 'Spring Term'
+modulecode: ''
+
 # biobliography options - if using other file names
 # or multiple bibliography files, change/add them here
 # Can also change the referencing style here using a
