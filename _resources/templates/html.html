@@ -788,6 +788,10 @@ $-------------------------------------------------------------------------> lang
     $if(title)$
     <header>
       <h1 class="title$if(subtitle)$ followed-by-subtitle$endif$">$title$</h1>
+      $---------------------------------------------------------------------> modulecode
+      $if(modulecode)$
+      <p class="subtitle">$modulecode$</p>
+      $endif$
       $---------------------------------------------------------------------> subtitle
       $if(subtitle)$
       <p class="subtitle" style="text-align:center;">$subtitle$</p>
