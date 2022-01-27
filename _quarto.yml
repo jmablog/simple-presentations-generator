@@ -32,6 +32,7 @@ format:
     sansfont: Open Sans # font used for header text throughout document
     classoption: landscape
     pagestyle: empty
+    cosmiclatte: false # set true to turn on an off-white page background colour
   html:
     template: _resources/templates/html.html
     toc: false # turn table of contents on/off
