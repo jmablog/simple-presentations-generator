@@ -1,8 +1,11 @@
 # Project options - can change the overall project title
 # and the name of the output directory here
+# Uncomment the post-render command to use the 
+# return-to-source post script - see Readme
 project:
   title: "Presentations"
   output-dir: "_PRESENTATIONS"
+  # post-render: _resources/scripts/return-to-source.ts
 
 # options for all formats - suggested not to change
 from: markdown+raw_attribute+raw_tex

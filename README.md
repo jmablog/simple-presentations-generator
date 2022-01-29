@@ -11,6 +11,12 @@ All of the presentation features available in Quarto can be used with these temp
 - Write your materials as required - either as plain Markdown files (`.md`) or using Quarto's own file type (`.qmd`). These can be in the base project directory, or stored in sub-folders to more conveniently keep related material together (e.g. image files to be included), in which case the directory structure used will be echoed in the output directory. For more details on how to write presentations in Markdown, see [this Quarto guide](https://quarto.org/docs/presentations/powerpoint.html).
 - From a terminal at the base project directory, simply run `quarto render`. Your output files should appear in the `_PRESENTATIONS` folder.
 
+## Post-render script
+
+If (like me) you want to store your outputs alongside your inputs rather than in their own sub-directory (`_PRESENTATIONS`), then a post-render step can be added to move all the output files back into their source directories and then cleanup the output directory. This script is written in Typescript to run in Deno, which is included with Quarto, so no extra dependencies are required. It reads the output directory you are using from the `_quarto.yml` file, cycles through all the files and files in sub-directories (to one level deep) in that output directory, and moves them back alongside their source input files. 
+
+In `_quarto.yml`, simply uncomment the line `post-render: _resources/scripts/return-to-source.ts` to use this script.
+
 ## Changing Powerpoint style
 
 In `_quarto.yml`, there is a section under `format` for Powerpoint that determines the Powerpoint theme used as a reference document:
