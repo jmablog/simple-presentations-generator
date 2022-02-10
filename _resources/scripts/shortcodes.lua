@@ -73,9 +73,9 @@ function Div (elem)
 end
 
 --[[
-  =========================
-  SLIDE PAGEBREAKS FOR PDF
-  =========================
+  ===============================
+  SLIDE PAGEBREAKS FOR PDF & HTML
+  ===============================
   inserts a pagebreak for headers in pdf
 ]]
 
@@ -92,6 +92,21 @@ function Header(elem)
     else
       return {
         pandoc.RawBlock('latex', '\\newpage'),
+        elem
+      }
+    end
+  end
+  if FORMAT:match 'html' then
+    if elem.level == 1 then
+      return {
+        pandoc.RawBlock('html', '</div>'),
+        pandoc.RawBlock('html', '<div class="slide">'),
+        elem
+      }
+    else
+      return {
+        pandoc.RawBlock('html', '</div>'),
+        pandoc.RawBlock('html', '<div class="slide">'),
         elem
       }
     end
