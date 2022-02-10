@@ -50,7 +50,7 @@ function Div (elem)
     can add more formats here if desired, just remember to add styles to
     css / latex / word templates as well
   ]]
-  local breakout_choices = Test_set { "Aside", "Questions", "Tip", "Warning", "Success" }
+  local breakout_choices = Test_set { "Aside", "Questions", "Tip", "Warning", "Success", "notes" }
   local breakout_type = elem.classes[1]
 
   -- match and add styles to elem as appropriate for FORMAT
@@ -61,6 +61,7 @@ function Div (elem)
     elseif FORMAT:match 'latex' then
       local drawBox = "\\begin{tcolorbox}[beforeafter skip=1cm, ignore nobreak=true, breakable, colframe=" .. elem.classes[1] .. "-frame, colback=" .. elem.classes[1] .. "-bg, coltext=" .. elem.classes[1] .. "-text, boxsep=2mm, arc=0mm, boxrule=0.5mm]"
       return{
+        pandoc.RawBlock('latex', '\\vfill'),
         pandoc.RawBlock('latex', drawBox),
         elem,
         pandoc.RawBlock('latex', '\\end{tcolorbox}')

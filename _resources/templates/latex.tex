@@ -435,8 +435,8 @@ $endif$
 % \usepackage{titlesec}
 % \titlelabel{\thetitle.\quad}
 % comment/uncomment the next line to insert a page break before each new H1
-% \let\oldsection\section
-% \renewcommand\section{\clearpage\oldsection}
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
 
 % changing options for table/figure captions ===================================
 % uncomment the below lines to just number figures/tables sequentially
@@ -466,6 +466,7 @@ $endif$
 
 \definecolor{notes-bg}{RGB}{244, 247, 252}
 \definecolor{notes-frame}{RGB}{233, 235, 238}
+\definecolor{notes-text}{RGB}{47, 54, 61}
 
 \definecolor{slide-titles}{RGB}{220, 50, 47}
 
@@ -522,6 +523,7 @@ $if(title)$
   $if(beamer)$
     \frame{\titlepage}
   $else$
+    % \maketitle
     \begin{center}
     \vspace*{5cm}
     {\Huge\bfseries $title$}\\
