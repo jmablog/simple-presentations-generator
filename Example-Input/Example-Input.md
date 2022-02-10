@@ -7,7 +7,7 @@ subtitle: 'James Adams'
 
 ## Slide heading
 
-Text here
+Text here. You can use the <mark>mark tag</mark> to highlight things in some formats.
 
 ## New slide heading
 
@@ -21,6 +21,10 @@ Text here
 - Using three colons
 
 :::
+
+## Emoji
+
+🤩 Totes work, except in PDF output, boo.
 
 ## Speaker notes
 
