@@ -1,0 +1,42 @@
+/*-- scss:defaults --*/
+
+/* Sentient */
+@font-face {
+	font-family: 'Sentient';
+	src: url('https://cdn.fontshare.com/wf/NY2ZL3ZVCWEGOL6C3UVCNGYW5UU4EWVZ/E62VQS3OCYTBL5HEKIEGN3RTBX7KFK6F/NZPIPWPM74OTNMX6CKNACLBKCGJLJEBU.woff2') format('woff2'),
+		 url('https://cdn.fontshare.com/wf/NY2ZL3ZVCWEGOL6C3UVCNGYW5UU4EWVZ/E62VQS3OCYTBL5HEKIEGN3RTBX7KFK6F/NZPIPWPM74OTNMX6CKNACLBKCGJLJEBU.woff') format('woff'),
+		 url('https://cdn.fontshare.com/wf/NY2ZL3ZVCWEGOL6C3UVCNGYW5UU4EWVZ/E62VQS3OCYTBL5HEKIEGN3RTBX7KFK6F/NZPIPWPM74OTNMX6CKNACLBKCGJLJEBU.ttf') format('truetype');
+	font-weight: 200 700;
+	font-display: swap;
+	font-style: normal;
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;700&family=Patua+One&display=swap');
+
+// fonts
+$font-family-sans-serif: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$presentation-font-size-root: 30px !default;
+$code-block-font-size: 0.9em !default;
+
+// colors
+$body-bg: #FFF8E7 !default;
+$code-block-bg: #FFF !default;
+$code-bg: #FFF !default;
+
+// headings
+$presentation-heading-font: Sentient, 'Patua One', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif !default;
+$presentation-h1-font-size: 2.1em !default;
+// $presentation-heading-color: #991410 !default;
+$presentation-heading-line-height: 2.6 !default;
+
+/*-- scss:rules --*/
+
+ul {
+	list-style: none; /* Remove default bullets */
+  }
+  
+  ul li::marker {
+	color: #AE030E; /* Change the color */
+	font-weight: bold; /* If you want it to be bold */
+  }

@@ -1,4 +1,5 @@
 import { parse } from "https://deno.land/std/encoding/yaml.ts";
+import { extname } from "https://deno.land/std/path/mod.ts";
 
 // declare type for Quarto options read in from yaml
 type Quarto_Opts = {
@@ -14,9 +15,19 @@ const output_path = quarto.project["output-dir"];
 // loop through all files in the output directory and move them back to their source directory
 // only works for single nested directories
 for (const dir of Deno.readDirSync(output_path)) {
+
 	if (dir.isFile) {
 		try {
+
+			if (extname(dir.name) === ".html5") {
+				const file = dir.name;
+				const filename_length = file.length - 6;
+				const new_file = file.substring(0, filename_length) + '-RJS.html';
+				Deno.renameSync(`${output_path}/${dir.name}`, `${output_path}/${new_file}`);
+				Deno.copyFileSync(`${output_path}/${new_file}`, `./${new_file}`);
+			} else {
 			Deno.copyFileSync(`${output_path}/${dir.name}`, `./${dir.name}`);
+			}
 		} catch (e) {
 			console.log(e);
 		}
@@ -27,8 +38,17 @@ for (const dir of Deno.readDirSync(output_path)) {
 		for (const sub of Deno.readDirSync(sub_path)) {
 			try {
 				if (sub.isFile) {
-					const dest_dir = `./${dir.name}`
-					Deno.copyFileSync(`${sub_path}/${sub.name}`, `${dest_dir}/${sub.name}`);
+					if (extname(sub.name) === ".html5") {
+						const file = sub.name;
+						const filename_length = file.length - 6;
+						const new_file = file.substring(0, filename_length) + '-RJS.html';
+						Deno.renameSync(`${sub_path}/${sub.name}`, `${sub_path}/${new_file}`);
+						const dest_dir = `./${dir.name}`
+						Deno.copyFileSync(`${sub_path}/${new_file}`, `${dest_dir}/${new_file}`);
+						} else {
+						const dest_dir = `./${dir.name}`
+						Deno.copyFileSync(`${sub_path}/${sub.name}`, `${dest_dir}/${sub.name}`);
+					}
 				}
 			} catch (e) {
 				console.log(e);

@@ -45,5 +45,11 @@ format:
     toc: false # turn table of contents on/off
   pptx:
     reference-doc: _resources/templates/pptx/cosmic-latte.pptx
-    
+  revealjs:
+    theme: _resources/templates/slide-theme.scss
+    transition: slide
+    margin: 0.2
+    smaller: false
+    subtitle: ''
+    output-ext: html5
     
