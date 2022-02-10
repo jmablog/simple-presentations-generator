@@ -19,9 +19,9 @@ for (const dir of Deno.readDirSync(output_path)) {
 	if (dir.isFile) {
 		try {
 
-			if (extname(dir.name) === ".html5") {
+			if (extname(dir.name) === ".htm") {
 				const file = dir.name;
-				const filename_length = file.length - 6;
+				const filename_length = file.length - 4;
 				const new_file = file.substring(0, filename_length) + '-RJS.html';
 				Deno.renameSync(`${output_path}/${dir.name}`, `${output_path}/${new_file}`);
 				Deno.copyFileSync(`${output_path}/${new_file}`, `./${new_file}`);
@@ -38,9 +38,9 @@ for (const dir of Deno.readDirSync(output_path)) {
 		for (const sub of Deno.readDirSync(sub_path)) {
 			try {
 				if (sub.isFile) {
-					if (extname(sub.name) === ".html5") {
+					if (extname(sub.name) === ".htm") {
 						const file = sub.name;
-						const filename_length = file.length - 6;
+						const filename_length = file.length - 4;
 						const new_file = file.substring(0, filename_length) + '-RJS.html';
 						Deno.renameSync(`${sub_path}/${sub.name}`, `${sub_path}/${new_file}`);
 						const dest_dir = `./${dir.name}`

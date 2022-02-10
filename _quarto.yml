@@ -51,5 +51,5 @@ format:
     margin: 0.2
     smaller: false
     subtitle: ''
-    output-ext: html5
+    output-ext: htm
     
