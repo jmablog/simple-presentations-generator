@@ -40,3 +40,11 @@ ul {
 	color: #AE030E; /* Change the color */
 	font-weight: bold; /* If you want it to be bold */
   }
+
+mark {
+	background-color: #FFE800;
+	font-weight: bold;
+	padding: 0 0.1em;
+	display: inline-block;
+	color: #FC0000;
+}
