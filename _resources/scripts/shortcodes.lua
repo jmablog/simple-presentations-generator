@@ -77,7 +77,7 @@ end
   ===============================
   SLIDE PAGEBREAKS FOR PDF & HTML
   ===============================
-  inserts a pagebreak for headers in pdf
+  inserts a pagebreak for headers and horizontal rules in pdf
 ]]
 
 function Header(elem)
@@ -111,6 +111,12 @@ function Header(elem)
         elem
       }
     end
+  end
+end
+
+function HorizontalRule(elem)
+  if FORMAT:match 'latex' then
+    return pandoc.RawBlock('latex', '\\newpage')
   end
 end
 
@@ -248,5 +254,5 @@ function RawBlock (el)
 end
 
 return {
-  {RawBlock = RawBlock, Div = Div, Span = Span, Header = Header}
+  {RawBlock = RawBlock, Div = Div, Span = Span, Header = Header, HorizontalRule = HorizontalRule}
 }
