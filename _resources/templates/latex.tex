@@ -226,8 +226,11 @@ $endif$
 $if(verbatim-in-note)$
 \VerbatimFootnotes % allow verbatim text in footnotes
 $endif$
-
+$if(beamer)$
+% \usepackage[a4paper]{geometry}
+$else$
 \usepackage[a4paper, margin=1in]{geometry}
+$endif$
 
 $if(beamer)$
 \newif\ifbibliography
@@ -507,6 +510,8 @@ $endif$
 {\large\bfseries}} % the style
 
 \makeatother
+
+\usepackage[export]{adjustbox}
 
 % ===================================================================================
 

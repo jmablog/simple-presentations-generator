@@ -120,6 +120,19 @@ function HorizontalRule(elem)
   end
 end
 
+-- Restrict image height to half page height if the target format is LaTeX.
+-- Uses the adjustbox package, included in latex.tex template
+
+function Image(elem)
+  if FORMAT:match 'latex' then
+    return {
+      pandoc.RawInline('latex', '\\includegraphics[max height=0.5\\paperheight]{'),
+      elem.src,
+      pandoc.RawInline('latex', '}')
+    }
+  end
+end
+
 --[[
   ==========================================================
   pagebreak – convert raw LaTeX page breaks to other formats
@@ -254,5 +267,5 @@ function RawBlock (el)
 end
 
 return {
-  {RawBlock = RawBlock, Div = Div, Span = Span, Header = Header, HorizontalRule = HorizontalRule}
+  {RawBlock = RawBlock, Div = Div, Span = Span, Header = Header, HorizontalRule = HorizontalRule, Image = Image}
 }
